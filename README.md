@@ -13,6 +13,6 @@ Feel free to download the source code and edit it as you see fit.
 5. Run the setup.exe
 
 **How to use the app:**
-1. Once installed, to open the app, double click on "setup.exe"
-2. Click on the "Get Path to DayZ App Data" button.
-3. Click on "Delete Log Files" button.
+1. Once installed, to open the app, double click on "setup.exe" within the extracted folder on your desktop (desktop icon upon installation will be added in the next release).
+2. Once the app has opened, click on the "Get Path to DayZ App Data" button.
+3. Once the list has populated with all folders and files from your AppData/Local/DayZ folder, click the "Delete Log Files" button.
