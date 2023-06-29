@@ -6,9 +6,9 @@ Feel free to download the source code and edit it as you see fit.
 
 **If you would like to install the app, follow the steps below:**
 1. Go to "Releases" in this repository (located on the right-hand side of the screen)
-1. Download .zip of the repository.
-2. Locate the "DayZ Crash Log Manager.zip" folder and copy it to your desktop.
-3. Extract the the zip folder on your desktop.
+1. Download .zip folder.
+2. Locate "DayZ Crash Log Manager.zip"  and copy it to your desktop.
+3. Extract the the zip folder to your desktop.
 4. Find the steup.exe within the extracted folder.
 5. Run the setup.exe
 
