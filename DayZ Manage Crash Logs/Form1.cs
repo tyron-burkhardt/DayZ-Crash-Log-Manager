@@ -20,7 +20,7 @@ namespace DayZ_Manage_Crash_Logs
         public Form1()
         {
             InitializeComponent();
-
+          
             var materialSKinManager = MaterialSkinManager.Instance;
             materialSKinManager.AddFormToManage(this);
             materialSKinManager.Theme = MaterialSkinManager.Themes.DARK;
@@ -58,7 +58,7 @@ namespace DayZ_Manage_Crash_Logs
         {
             List<FileInfo> list = new List<FileInfo>();
 
-
+            
             if (extension.Length > 0)
             {
                 if (!string.IsNullOrEmpty(DayZAppDataPath))
