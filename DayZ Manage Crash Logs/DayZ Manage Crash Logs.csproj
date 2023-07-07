@@ -61,7 +61,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons\transparent-dayz-logo.ico</ApplicationIcon>
+    <ApplicationIcon>transparent-dayz-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\transparent-dayz-logo.ico" />
+    <Content Include="transparent-dayz-logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

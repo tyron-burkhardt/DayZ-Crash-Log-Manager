@@ -81,35 +81,67 @@ namespace DayZ_Manage_Crash_Logs
         private void btn_browse_Click_1(object sender, EventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
+            FileInfo[] files = new FileInfo[1];
 
 
             listbox_targetfiles.Items.Clear();
             string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-            DayZAppDataPath = localAppDataPath + "\\DayZ";
+               
+            
+                DayZAppDataPath = localAppDataPath + "\\DayZ";
 
-            txtbox_browsetarget.Text = DayZAppDataPath;
+                txtbox_browsetarget.Text = DayZAppDataPath;
 
-            DirectoryInfo dir = GetInfo();
+                DirectoryInfo dir = GetInfo();
 
-            FileInfo[] files = dir.GetFiles();
+            try
+            {
+               files = dir.GetFiles();
 
-            var sortedList = files.OrderBy(f => Path.GetExtension(f.ToString()));
+                var sortedList = files.OrderBy(f => Path.GetExtension(f.ToString()));
 
-            PopulateListbox(sortedList);
+                PopulateListbox(sortedList);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! No DayZ folder could be found in " + localAppDataPath.ToString() + " folder. Please ensure that the game is installed.", "DayZ Folder Not Found",
+                MessageBoxButtons.OK,
+               MessageBoxIcon.Warning);
+
+                
+            }
+               
+
+            
         }
 
         private void btn_deletelogfiles_Click_1(object sender, EventArgs e)
         {
+            
             List<FileInfo> list = GetFilesWithExtension(extensions);
-            // string[] dir_files = Directory.GetFiles(DayZAppDataPath,".log");
-            foreach (var item in list)
-                File.Delete(item.FullName);
+            if (list.Count > 0)
+            {
 
-            DirectoryInfo place = GetInfo();
-            FileInfo[] files = place.GetFiles();
-            var sortedList = files.OrderBy(f => Path.GetExtension(f.ToString()));
-            PopulateListbox(sortedList);
+                // string[] dir_files = Directory.GetFiles(DayZAppDataPath,".log");
+                foreach (var item in list)
+                    File.Delete(item.FullName);
+
+                DirectoryInfo place = GetInfo();
+                FileInfo[] files = place.GetFiles();
+                var sortedList = files.OrderBy(f => Path.GetExtension(f.ToString()));
+                PopulateListbox(sortedList);
+
+                MessageBox.Show("Successfully deleted all log files.", "Success!",
+                   MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("There are no log files to be deleted.", "No action needed.",
+                   MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
