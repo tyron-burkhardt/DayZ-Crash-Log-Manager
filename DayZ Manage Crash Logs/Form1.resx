@@ -118,9 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>In the file list to the left, you'll be able to see files with the extensions (.log, . MDMP, and .RTP). These are all crash log files. These files can accumolate and take up uneccesary space. These files can be deleted safely without causing any issues to your game. If you would like to clear the crash log files, click the button below.
-
-</value>
+    <value>The file list on the left displays DayZ crash log files with the .log, .mdmp, and .rtp extensions. These files can accumulate over time and consume unnecessary disk space. They can be safely deleted without affecting your game. To remove them, click the button below.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

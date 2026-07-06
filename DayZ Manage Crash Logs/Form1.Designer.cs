@@ -29,32 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.txtbox_browsetarget = new System.Windows.Forms.TextBox();
-            this.listbox_targetfiles = new System.Windows.Forms.ListBox();
+            this.txtDayZPath = new System.Windows.Forms.TextBox();
+            this.lstCrashLogs = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_browse = new MaterialSkin.Controls.MaterialButton();
+            this.btnLocateLogs = new MaterialSkin.Controls.MaterialButton();
             this.btn_deletelogfiles = new MaterialSkin.Controls.MaterialButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblFileCount = new System.Windows.Forms.Label();
+            this.lblDiskSpace = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtbox_browsetarget
+            // txtDayZPath
             // 
-            this.txtbox_browsetarget.Location = new System.Drawing.Point(238, 85);
-            this.txtbox_browsetarget.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbox_browsetarget.Name = "txtbox_browsetarget";
-            this.txtbox_browsetarget.ReadOnly = true;
-            this.txtbox_browsetarget.Size = new System.Drawing.Size(384, 24);
-            this.txtbox_browsetarget.TabIndex = 0;
+            this.txtDayZPath.Location = new System.Drawing.Point(238, 85);
+            this.txtDayZPath.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDayZPath.Name = "txtDayZPath";
+            this.txtDayZPath.ReadOnly = true;
+            this.txtDayZPath.Size = new System.Drawing.Size(384, 24);
+            this.txtDayZPath.TabIndex = 0;
             // 
-            // listbox_targetfiles
+            // lstCrashLogs
             // 
-            this.listbox_targetfiles.FormattingEnabled = true;
-            this.listbox_targetfiles.ItemHeight = 17;
-            this.listbox_targetfiles.Location = new System.Drawing.Point(18, 124);
-            this.listbox_targetfiles.Margin = new System.Windows.Forms.Padding(4);
-            this.listbox_targetfiles.Name = "listbox_targetfiles";
-            this.listbox_targetfiles.Size = new System.Drawing.Size(921, 480);
-            this.listbox_targetfiles.TabIndex = 2;
+            this.lstCrashLogs.FormattingEnabled = true;
+            this.lstCrashLogs.ItemHeight = 17;
+            this.lstCrashLogs.Location = new System.Drawing.Point(18, 124);
+            this.lstCrashLogs.Margin = new System.Windows.Forms.Padding(4);
+            this.lstCrashLogs.Name = "lstCrashLogs";
+            this.lstCrashLogs.Size = new System.Drawing.Size(921, 480);
+            this.lstCrashLogs.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -68,25 +70,25 @@
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
-            // btn_browse
+            // btnLocateLogs
             // 
-            this.btn_browse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_browse.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_browse.Depth = 0;
-            this.btn_browse.HighEmphasis = true;
-            this.btn_browse.Icon = null;
-            this.btn_browse.Location = new System.Drawing.Point(632, 76);
-            this.btn_browse.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.btn_browse.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_browse.Name = "btn_browse";
-            this.btn_browse.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_browse.Size = new System.Drawing.Size(228, 36);
-            this.btn_browse.TabIndex = 5;
-            this.btn_browse.Text = "Get Path To DayZ App Data";
-            this.btn_browse.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_browse.UseAccentColor = false;
-            this.btn_browse.UseVisualStyleBackColor = true;
-            this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click_1);
+            this.btnLocateLogs.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLocateLogs.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnLocateLogs.Depth = 0;
+            this.btnLocateLogs.HighEmphasis = true;
+            this.btnLocateLogs.Icon = null;
+            this.btnLocateLogs.Location = new System.Drawing.Point(632, 76);
+            this.btnLocateLogs.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnLocateLogs.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLocateLogs.Name = "btnLocateLogs";
+            this.btnLocateLogs.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnLocateLogs.Size = new System.Drawing.Size(228, 36);
+            this.btnLocateLogs.TabIndex = 5;
+            this.btnLocateLogs.Text = "Get Path To DayZ App Data";
+            this.btnLocateLogs.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnLocateLogs.UseAccentColor = false;
+            this.btnLocateLogs.UseVisualStyleBackColor = true;
+            this.btnLocateLogs.Click += new System.EventHandler(this.btnLocateLogs_Click_1);
             // 
             // btn_deletelogfiles
             // 
@@ -117,17 +119,37 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Path to AppData DayZ fodler:";
             // 
+            // lblFileCount
+            // 
+            this.lblFileCount.AutoSize = true;
+            this.lblFileCount.Location = new System.Drawing.Point(629, 133);
+            this.lblFileCount.Name = "lblFileCount";
+            this.lblFileCount.Size = new System.Drawing.Size(91, 17);
+            this.lblFileCount.TabIndex = 8;
+            this.lblFileCount.Text = "File Cout: 0";
+            // 
+            // lblDiskSpace
+            // 
+            this.lblDiskSpace.AutoSize = true;
+            this.lblDiskSpace.Location = new System.Drawing.Point(629, 168);
+            this.lblDiskSpace.Name = "lblDiskSpace";
+            this.lblDiskSpace.Size = new System.Drawing.Size(166, 17);
+            this.lblDiskSpace.TabIndex = 9;
+            this.lblDiskSpace.Text = "Recoverable space: 0 B";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 578);
+            this.ClientSize = new System.Drawing.Size(1260, 664);
+            this.Controls.Add(this.lblDiskSpace);
+            this.Controls.Add(this.lblFileCount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_deletelogfiles);
-            this.Controls.Add(this.btn_browse);
+            this.Controls.Add(this.btnLocateLogs);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listbox_targetfiles);
-            this.Controls.Add(this.txtbox_browsetarget);
+            this.Controls.Add(this.lstCrashLogs);
+            this.Controls.Add(this.txtDayZPath);
             this.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -143,12 +165,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtbox_browsetarget;
-        private System.Windows.Forms.ListBox listbox_targetfiles;
+        private System.Windows.Forms.TextBox txtDayZPath;
+        private System.Windows.Forms.ListBox lstCrashLogs;
         private System.Windows.Forms.TextBox textBox1;
-        private MaterialSkin.Controls.MaterialButton btn_browse;
+        private MaterialSkin.Controls.MaterialButton btnLocateLogs;
         private MaterialSkin.Controls.MaterialButton btn_deletelogfiles;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFileCount;
+        private System.Windows.Forms.Label lblDiskSpace;
     }
 }
 
